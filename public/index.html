@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Performance Analytics</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div class="sidebar">
+
+        <h2>📊 Student Analytics</h2>
+
+        <nav>
+            <a href="#" class="active">Dashboard</a>
+            <a href="#performance">Performance</a>
+            <a href="#attendance">Attendance</a>
+            <a href="#students">Students</a>
+        </nav>
+
+        <div class="sidebar-footer">
+            Student Analytics Project
+        </div>
+
+    </div>
+
+
+    <main class="main-content">
+
+        <header>
+            <div>
+                <h1>Student Performance Dashboard</h1>
+                <p>Analyze student academic performance and attendance.</p>
+            </div>
+
+            <span class="status">● Live Dashboard</span>
+        </header>
+
+
+        <!-- Statistics Cards -->
+
+        <section class="stats-grid">
+
+            <div class="card">
+                <h3>Total Students</h3>
+                <h2 id="totalStudents">Loading...</h2>
+            </div>
+
+            <div class="card">
+                <h3>Average Marks</h3>
+                <h2 id="averageMarks">Loading...</h2>
+            </div>
+
+            <div class="card">
+                <h3>Average Attendance</h3>
+                <h2 id="averageAttendance">Loading...</h2>
+            </div>
+
+            <div class="card">
+                <h3>Excellent Students</h3>
+                <h2 id="excellentStudents">Loading...</h2>
+            </div>
+
+        </section>
+
+
+        <!-- Performance -->
+
+        <section id="performance" class="charts-section">
+
+            <div class="chart-card">
+                <h2>Student Performance</h2>
+
+                <canvas id="performanceChart"></canvas>
+            </div>
+
+            <div class="chart-card">
+                <h2>Subject-wise Average Marks</h2>
+
+                <canvas id="subjectChart"></canvas>
+            </div>
+
+        </section>
+
+
+        <!-- Attendance -->
+
+        <section id="attendance" class="charts-section">
+
+            <div class="chart-card">
+                <h2>Attendance Analysis</h2>
+
+                <canvas id="attendanceChart"></canvas>
+            </div>
+
+            <div class="chart-card">
+                <h2>Student Categories</h2>
+
+                <div class="category-list">
+
+                    <p>Excellent:
+                        <strong id="excellentCount">0</strong>
+                    </p>
+
+                    <p>Average:
+                        <strong id="averageCount">0</strong>
+                    </p>
+
+                    <p>Needs Improvement:
+                        <strong id="weakCount">0</strong>
+                    </p>
+
+                    <p>Low Attendance:
+                        <strong id="lowAttendance">0</strong>
+                    </p>
+
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- Students Table -->
+
+        <section id="students" class="table-section">
+
+            <h2>Student Records</h2>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search student name..."
+            >
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Student ID</th>
+                            <th>Name</th>
+                            <th>City</th>
+                            <th>Math</th>
+                            <th>Science</th>
+                            <th>English</th>
+                            <th>Attendance</th>
+                            <th>Average</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="studentTable">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <footer>
+            Student Performance Analytics | Built with Python, Pandas & JavaScript
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
